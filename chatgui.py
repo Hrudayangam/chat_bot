@@ -8,6 +8,8 @@ Created on Fri Aug 28 02:54:42 2020
 import nltk
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
+import keras
+
 import pickle
 import numpy as np
 
@@ -15,7 +17,7 @@ from keras.models import load_model
 model = load_model('chatbot_model.h5')
 import json
 import random
-intents = json.loads(open(r'C:\Users\Asus\Desktop\chatbot\intents.json').read())
+intents = json.loads(open(r'C:\Users\hruda\Downloads\chat_bot-master\chat_bot-master\intents.json').read())
 words = pickle.load(open('words.pkl','rb'))
 classes = pickle.load(open('classes.pkl','rb'))
 
@@ -86,19 +88,19 @@ def send():
         ChatLog.config(foreground="#442265", font=("Verdana", 12 ))
     
         res = chatbot_response(msg)
-        ChatLog.insert(END, "Bot: " + res + '\n\n')
+        ChatLog.insert(END, "DRS-AI: " + res + '\n\n')
             
         ChatLog.config(state=DISABLED)
         ChatLog.yview(END)
  
 
 base = Tk()
-base.title("Hello")
+base.title("DRS-AI")
 base.geometry("400x500")
 base.resizable(width=FALSE, height=FALSE)
 
 #Create Chat window
-ChatLog = Text(base, bd=0, bg="white", height="8", width="50", font="Arial",)
+ChatLog = Text(base, bd=0, bg="cyan", height="8", width="50", font="Arial",)
 
 ChatLog.config(state=DISABLED)
 

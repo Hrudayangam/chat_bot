@@ -1,7 +1,7 @@
 {"intents": [
         {"tag": "greeting",
          "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Hello, thanks for asking", "Good to see you again", "Hi there, how can I help?"],
+         "responses": ["Hello, how may I help you today?", "Good to see you again", "Hi there, how can I help?"],
          "context": [""]
         },
         {"tag": "goodbye",
@@ -19,9 +19,14 @@
          "responses": ["Sorry, can't understand you", "Please give me more info", "Not sure I understand"],
          "context": [""]
         },
+        {"tag": "meme",
+         "patterns": ["where can i get bread", "bread"],
+         "responses": ["sending you to france, get that BREAD son"],
+         "context": [""]
+        },
         {"tag": "options",
          "patterns": ["How you could help me?", "What you can do?", "What help you provide?", "How you can be helpful?", "What support is offered"],
-         "responses": ["I can guide you through Adverse drug reaction list, Blood pressure tracking, Hospitals and Pharmacies", "Offering support for Adverse drug reaction, Blood pressure, Hospitals and Pharmacies"],
+         "responses": ["I can give you reviews on anything you want"],
          "context": [""]
         },
         {"tag": "adverse_drug",
@@ -58,6 +63,11 @@
          "patterns": ["Lookup for hospital", "Searching for hospital to transfer patient", "I want to search hospital data", "Hospital lookup for patient", "Looking up hospital details" ],
          "responses": ["Please provide hospital name or location"],
          "context": ["search_hospital_by_params"]
+        },
+        {"tag": "get sentiment analysis",
+         "patterns": ["give me a review on", " review","opinion"],
+         "responses": ["Loading results"],
+         "context": [""]
         },
         {"tag": "search_hospital_by_params",
          "patterns": [],

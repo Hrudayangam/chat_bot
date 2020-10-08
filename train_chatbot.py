@@ -1,10 +1,11 @@
 import nltk
-
+#nltk.download()
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
 import pickle
 import numpy as np
+import keras
 from keras.models import Sequential
 from keras.layers import Dense, Activation, Dropout
 from keras.optimizers import SGD
@@ -14,7 +15,7 @@ classes = []
 documents = []
 ignore_words = ['?', '!']
 
-with open(r'C:\Users\Asus\Desktop\chatbot\intents.json') as data_file:
+with open(r'C:\Users\hruda\Downloads\chat_bot-master\chat_bot-master\intents.json') as data_file:
    intents= json.load(data_file)
   
 #token kiya
@@ -51,7 +52,7 @@ output_empty = [0] * len(classes)
 for doc in documents:
     # initialize our bag of words
     bag = []
-    # list of tokenized words for the pattern
+    # list of tokenized words for the pattern 
     pattern_words = doc[0]
     # lemmatize each word - create base word, in attempt to represent related words
     pattern_words = [lemmatizer.lemmatize(word.lower()) for word in pattern_words]
